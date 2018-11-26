@@ -1,0 +1,55 @@
+#newYear > div{
+	font-family: 'Shadows Into Light', cursive;
+	-webkit-animation: wordsOfNewYear 1.2s ease-in-out infinite alternate;
+	-o-animation: wordsOfNewYear 1.2s ease-in-out infinite alternate;
+	animation: wordsOfNewYear 1.2s ease-in-out infinite alternate;
+	cursor: default;
+}
+@keyframes wordsOfNewYear {
+	from{
+		-webkit-transform: rotate(-20deg);
+		-moz-transform: rotate(-20deg);
+		transform: rotate(-20deg);
+	}
+	to{
+		-webkit-transform: rotate(20deg);
+		-moz-transform: rotate(20deg);
+		transform: rotate(20deg);
+	}
+}
+@-webkit-keyframes wordsOfNewYear {
+	from{
+		-webkit-transform: rotate(-20deg);
+		-moz-transform: rotate(-20deg);
+		transform: rotate(-20deg);
+	}
+	to{
+		-webkit-transform: rotate(20deg);
+		-moz-transform: rotate(20deg);
+		transform: rotate(20deg);
+	}
+}
+@-moz-keyframes wordsOfNewYear {
+	from{
+		-webkit-transform: rotate(-20deg);
+		-moz-transform: rotate(-20deg);
+		transform: rotate(-20deg);
+	}
+	to{
+		-webkit-transform: rotate(20deg);
+		-moz-transform: rotate(20deg);
+		transform: rotate(20deg);
+	}
+}
+@-o-keyframes wordsOfNewYear {
+	from{
+		-webkit-transform: rotate(-20deg);
+		-moz-transform: rotate(-20deg);
+		transform: rotate(-20deg);
+	}
+	to{
+		-webkit-transform: rotate(20deg);
+		-moz-transform: rotate(20deg);
+		transform: rotate(20deg);
+	}
+}

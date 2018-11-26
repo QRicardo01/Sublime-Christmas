@@ -221,20 +221,23 @@ var PageLogic = function(){
 				$("#merryXmas").append("s");
 			},2600);
 			setTimeout( function(){
-				$("#merryXmas").append("m");
+				$("#merryXmas").append("t");
 			},2700);
 			setTimeout( function(){
-				$("#merryXmas").append("a");
+				$("#merryXmas").append("m");
 			},2800);
 			setTimeout( function(){
-				$("#merryXmas").append("s");
+				$("#merryXmas").append("a");
 			},2900);
 			setTimeout( function(){
-				$("#merryXmas").append("...");
+				$("#merryXmas").append("s");
 			},3000);
 			setTimeout( function(){
+				$("#merryXmas").append("...");
+			},3100);
+			setTimeout( function(){
 				$("#merryXmas").append("<span id='barra'>|</span>");
-			},3150);
+			},3250);
 		},
 		barra: function(){
 			var barr = $("#barra").css({"color":"white"});
@@ -258,9 +261,42 @@ var PageLogic = function(){
 			$("#hide, #iconSublimeText").click( function(){
 				if (PageLogic.showSublimeText) {
 					$("#sublimeText").hide();
+					var childOfMarginOfNewYear = $("#newYear").find("div");
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(0).show();
+					},100);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(1).show();
+					},200);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(2).show();
+					},300);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(3).show();
+					},400);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(4).show();
+					},500);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(5).show();
+					},600);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(6).show();
+					},700);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(7).show();
+					},800);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(8).show();
+					},900);
+					setTimeout( function(){
+						$(childOfMarginOfNewYear).eq(9).show();
+					},1000);
 					PageLogic.showSublimeText = false;
-				}else{
+				}
+				else{
 					$("#sublimeText").show();
+					$("#newYear > div").hide();
 					PageLogic.showSublimeText = true;
 				}
 			});
@@ -324,44 +360,35 @@ var PageLogic = function(){
 			}
 		},
 		Taskbar: function(){
-			var horizontalBar = "<div id='toggleAlert'><button type='button' class='button buttonOK' id='button'> OK </button></div>";
+			var horizontalBar = "<div id='toggleAlert'><button type='button' class='button buttonOK' onclick='"+"$(\"#groupAlerts\").children().hide();$(\"#backgroundBlack\").hide()"+"'> OK </button></div>";
 			var alert = "<img src='http://www.bauru.usp.br/wp-content/uploads/alerta-300x290.png' id='iconAlert'></img>";
-			$("body").append("<div id='alertSkype' class='alerts closetAlert'></div><div id='alertBrowsers' class='alerts closetAlert'></div><div id='alertGeneral' class='alerts closetAlert'></div><div id='alertEmpty' class='alerts closetAlert'></div>");
+			$("#groupAlerts").append("<div id='alertSkype' class='alerts closetAlert'></div><div id='alertBrowsers' class='alerts closetAlert'></div><div id='alertGeneral' class='alerts closetAlert'></div><div id='alertEmpty' class='alerts closetAlert'></div>");
 
 			$("#iconSkype").click( function(){
 				$("#alertSkype").append(alert +"<p>In the north pole there is no internet, Santa prefers that you send him your letters.</p>"+ horizontalBar);
-				$("#alertSkype, #backgroundBlack").toggle();
+				$("#alertSkype, #backgroundBlack, #pyrotechnics").toggle();
+				$("#pyrotechnics").attr("onclick","var r=2+parseInt(4+3);for(var i=r; i--;){setTimeout('createFirework(68,46,8,7,null,null,null,null,false,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false");
 			});
 			$("#iconChrome, #iconFirefox, #iconSafari, #iconOpera").click( function(){
 				$("#alertBrowsers").append(alert +"<p>You do not have to look for Christmas, she will find you.</p>"+ horizontalBar);
-				$("#alertBrowsers, #backgroundBlack").toggle();
+				$("#alertBrowsers, #backgroundBlack, #pyrotechnics").toggle();
+				$("#pyrotechnics").attr("onclick","var r=2+parseInt(2+5);for(var i=r; i--;){setTimeout('createFirework(63,62,6,5,null,null,null,null,false,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false");
 			});
 			$("#iconItunes, #iconMysqlWorkbench, #iconVlc, #iconAppStore").click( function(){
 				$("#alertGeneral").append(alert +"<p>You can not change the Christmas.</p>"+ horizontalBar);
-				$("#alertGeneral, #backgroundBlack").toggle();
+				$("#alertGeneral, #backgroundBlack, #pyrotechnics").toggle();
+				$("#pyrotechnics").attr("onclick","var r=2+parseInt(3*3);for(var i=r; i--;){setTimeout('createFirework(59,50,6,5,null,null,null,null,false,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false");
 			});
 			$("#iconTrashEmpty").click( function(){
 				$("#alertEmpty").append(alert +"<p>Do not eliminate Christmas.</p>"+ horizontalBar);
-				$("#alertEmpty, #backgroundBlack").toggle();
+				$("#alertEmpty, #backgroundBlack, #pyrotechnics").toggle();
+				$("#pyrotechnics").attr("onclick","var r=4+parseInt(3*22);for(var i=r; i--;){setTimeout('createFirework(8,14,2,null,null,null,null,null,Math.random()>0.5,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false");
 			});
-			$("#backgroundBlack").click( function(){
-				$("#backgroundBlack").hide();
-				$("#backgroundBlack").nextAll().hide();
+			$("#backgroundBlack, #pyrotechnics").click( function(){
+				$("#backgroundBlack, #groupAlerts>div").hide();
 			});	
-			if ($("#alertSkype").css({"display": "none"})) {
-					$("#alertSkype").empty();
-			}
-		},
-		closetAlert: function(){
-			$("#closetAlert, .buttonOK").click( function(){
-				var Window = $(this).parents().get(1);
-				$(Window).hide();
-				$("#backgroundBlack").hide();
-			});
-		},
-		easterEgg: function(){
-			$("#easterEgg").click(function(){
-				$("#marginOftest").toggle();
+			$("#marginOfTaskbar").hover( function(){
+				$("#signageToUpload").children().toggle();
 			});
 		}
 	};
@@ -376,8 +403,7 @@ $(document).ready(function(){
 	PageLogic.accountant(17);
 	PageLogic.hide();
 	PageLogic.closet();
-	PageLogic.closetAlert();
 	PageLogic.Taskbar();
-	PageLogic.easterEgg();
 	setInterval(function(){PageLogic.barra();},600);
+
 });

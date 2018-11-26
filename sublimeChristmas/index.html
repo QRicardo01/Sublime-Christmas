@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style/jquery-ui.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="style/prettify.css"/> 
-		<link rel="stylesheet" type="text/css" href="style/animationEasterEgg.css">
+		<link rel="stylesheet" type="text/css" href="style/animations.css">
 		<link rel="stylesheet" type="text/css" href="style/indexStyleCss.css">
 		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -15,11 +15,9 @@
 	<body>
 		<div id="fireworks-template">
 			<div id="fw" class="firework"></div>
-			<div id="fp" class="fireworkParticle"><img src="image/particles.gif" alt="" /></div>
+			<div id="fp" class="fireworkParticle"><img src="image/particles.gif"/></div>
 		</div>
 		<div id="fireContainer"></div>
-		<div id="easterEgg" onclick="var r=4+parseInt(3*22);for(var i=r; i--;){setTimeout('createFirework(8,14,2,null,null,null,null,null,Math.random()>0.5,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false">
-		</div>
 
 		<div id="marginOfApplication">
 			<div id="sublimeText" class="maximizeSublimeText">
@@ -36,7 +34,10 @@
 				</div>
 			</div>
 		</div>
-		<div id="marginOftaskbar">
+		<div id="marginOfTaskbar">
+			<div id="signageToUpload">
+				<img src="https://png.pngtree.com/element_our/md/20180301/md_5a97a13207afe.png" >
+			</div>
 			<div id="taskbar">
 				<a id="iconSkype">
 					<img src="https://icon-icons.com/icons2/840/PNG/512/Skype_icon-icons.com_66927.png">
@@ -73,15 +74,8 @@
 				</a>	
 			</div>
 		</div>
-		
-		<div id='backgroundBlack'></div>
-		<div id="alertCloset" class="alerts closetAlert">
-			<img src='http://www.bauru.usp.br/wp-content/uploads/alerta-300x290.png' id='iconAlert'></img>
-			<p>You can not close Christmas</p>
-			<div id='toggleAlert'><button type='button' class='button buttonOK' id='button'> OK </button></div>
-		</div>
-		<div id="marginOftest">
-			<div id="prueba">
+		<div id="marginOfNewYear">
+			<div id="newYear">
 				<div>N</div>
 				<div>E</div>
 				<div style='padding-right: 14px;'>W</div>
@@ -94,10 +88,21 @@
 				<div>R:</div>
 			</div>
 		</div>
-		
+		<div id='backgroundBlack'></div>
+		<div id="alertCloset" class="alerts closetAlert">
+			<img src='http://www.bauru.usp.br/wp-content/uploads/alerta-300x290.png' id='iconAlert'></img>
+			<p>You can not close Christmas</p>
+			<div id='toggleAlert'>
+				<button type='button' class='button buttonOK' id='buttonOK'> OK </button>
+			</div>
+		</div>
+		<div id="groupAlerts">
+			<div id="pyrotechnics">
+				<img src="https://png2.kisspng.com/20180710/kbl/kisspng-computer-icons-fireworks-firework-emoji-5b457434a5da89.3554598715312783886793.png">
+			</div>
+		</div>
 		<script type="text/javascript" src="script/soundmanager2-nodebug-jsmin.js"></script>
 		<script type="text/javascript" src="script/fireworks.js"></script>
-		<script type="text/javascript" src="script/jquery.transform2d.js"></script>
 		<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="script/prettify.js"></script>
 		<script type="text/javascript" src="script/jquery-ui.min.js"></script>
